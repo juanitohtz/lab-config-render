@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: lab-config-render
+    runtime: static
+    branch: main
+    autoDeployTrigger: commit
+    buildCommand: 'mkdir -p public && cp index.html public/'
+    staticPublishPath: public
+    envVars:
+      - key: ENTORNO
+        value: laboratorio
